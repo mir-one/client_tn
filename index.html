@@ -20,7 +20,7 @@
 <html ng-app="app" ng-csp>
 <head>
   <meta charset="utf-8">
-  <title>МИР | Waves Blockchain</title>
+  <title>МИР | Turtle Network</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/mir.css">
 
@@ -41,6 +41,12 @@
 
 <!-- LOG IN AREA -->
 <div id="lockscreen" class="userBG" ng-controller="accountsController as accounts" ng-switch-when="accounts-screen" ng-cloak>
+  <div class="banner">
+    <div class="banner-content">
+      <!--<img src="img/warning_icon.svg"/> This is a Waves fork. Powered by TurtleNode.-->
+
+    </div>
+  </div>
   <table id="lockscreenTable">
 
     <thead>
@@ -123,7 +129,7 @@
             <div class="plate-warning">
               <p class="dialog-text" style="font-weight: bold;">Treat your SEED (backup phrase) with care!</p>
               <p class="dialog-text">Only SEED can provide access to your wallet.</p>
-              <p class="dialog-text">1. Don't put your SEED anywhere except official<br/>Waves clients (look at the site domain).</p>
+              <p class="dialog-text">1. Don't put your SEED anywhere except official<br/>TurtleNetwork clients (look at the site domain).</p>
               <p class="dialog-text">If someone else accesses it you will lose your funds.</p>
               <p class="dialog-text">2. Store your SEED safely, it is the only<br/>way to restore your wallet.</p>
             </div>
@@ -221,9 +227,12 @@
     <p class="dialog-text">This feature is still under development and not active during the alpha release.</p>
     <p class="dialog-text">Follow our social media channels to stay up to date with the latest improvements and developments.</p>
     <div class="modal-media">
-      <a href="https://twitter.com/mirone_platform" target="_blank"><img class="modal-media-img" src="img/twitter_icon.svg" /></a>
-      <a href="https://t.me/mirplatform" target="_blank"><img class="modal-media-img" src="img/telegram_icon.svg" /></a>
-      <a href="https://vk.com/mirone_platform" target="_blank"><img id="icon-blog" class="modal-media-img" src="img/vk_icon.svg" /></a>
+      <a href="https://blog.wavesplatform.com/" target="_blank"><img class="modal-media-img" src="img/blog_icon.svg" /></a>
+      <a href="https://twitter.com/__Black_Turtle_" target="_blank"><img class="modal-media-img" src="img/twitter_icon.svg" /></a>
+      <a href="https://www.facebook.com/BlackTurtleWavesPool/" target="_blank"><img class="modal-media-img" src="img/facebook_icon.svg" /></a>
+      <a href="http://slack.wavesplatform.com/" target="_blank"><img class="modal-media-img" src="img/slack_icon.svg" /></a>
+      <a href="https://www.reddit.com/r/Wavesplatform/" target="_blank"><img class="modal-media-img" src="img/reddit_icon.svg" /></a>
+      <a href="https://vk.com/wavesplatform" target="_blank"><img id="icon-blog" class="modal-media-img" src="img/vk_icon.svg" /></a>
     </div>
   </div>
   <!-- /shared blocks-->
@@ -260,7 +269,7 @@
           <div class="plate-warning">
             <p class="dialog-text" style="font-weight: bold;">Treat your SEED (backup phrase) with care!</p>
             <p class="dialog-text">Only SEED can provide access to your wallet.</p>
-            <p class="dialog-text">1. Don't put your SEED anywhere except official<br/>Waves clients (look at the site domain).</p>
+            <p class="dialog-text">1. Don't put your SEED anywhere except official<br/>TurtleNetwork clients (look at the site domain).</p>
             <p class="dialog-text">If someone else accesses it you will lose your funds.</p>
             <p class="dialog-text">2. Store your SEED safely, it is the only<br/>way to restore your wallet.</p>
           </div>
@@ -301,7 +310,7 @@
                 <td><input class="wInput form-control" name="aliasName" type="text" placeholder="Symbolic name" ng-model="create.alias"/></td>
               </tr>
               <tr>
-                <td>Waves fee</td>
+                <td>TN fee</td>
                 <td>{{::create.fee.formatAmount(true)}} {{::create.fee.currency.displayName}}</td>
               </tr>
               </tbody>
@@ -329,15 +338,15 @@
     <!-- APPLICATION TAB SELECTORS -->
     <section id="tabs" class="fFade noSelect">
       <div id="tabs-Iconset" class="centerIt">
-        <span waves-tab
-              on-select="nav.changeTab(pageId)"
-              current-page-id="nav.currentTab"
-              page-id="wallet"
-              caption="'Wallet tab'"
-              tooltipster
-              tooltip-html
-              tooltip-theme="tooltipster-theme3"
-              tooltip-title="<center><u>Wallet</u></center><br/>Area containing the main wallets."></span>
+                    <span waves-tab
+                          on-select="nav.changeTab(pageId)"
+                          current-page-id="nav.currentTab"
+                          page-id="wallet"
+                          caption="'Wallet tab'"
+                          tooltipster
+                          tooltip-html
+                          tooltip-theme="tooltipster-theme3"
+                          tooltip-title="<center><u>Wallet</u></center><br/>Area containing the main wallets."></span>
         <span waves-tab
               on-select="nav.changeTab(pageId)"
               current-page-id="nav.currentTab"
@@ -355,17 +364,18 @@
               tooltipster
               tooltip-html
               tooltip-theme="tooltipster-theme3"
-              tooltip-title="<center><u>Waves Decentralized Exchange</u></center><br/>Access to Waves markets where you can<br/>conveniently buy, sell and trade tokens."></span>
-      <!--  <span waves-tab
+              tooltip-title="<center><u>TurtleNetwork Decentralized Exchange</u></center><br/>Access to TurtleNetwork markets where you can<br/>conveniently buy, sell and trade tokens."></span>
+        <span waves-tab
               on-select="nav.changeTab(pageId)"
               current-page-id="nav.currentTab"
               page-id="leasing"
-              caption="'Waves leasing tab'"
+              caption="'TurtleNetwork leasing tab'"
               tooltipster
               tooltip-html
               tooltip-theme="tooltipster-theme3"
-              tooltip-title="<center><u>Leasing</u></center><br/>Lease your Waves<br/>to another wallet."></span>
-              -->
+              tooltip-title="<center><u>Leasing</u></center><br/>Lease your $TN<br/>to another wallet."></span>
+        <!--<span waves-tab on-select="nav.changeTab(pageId)" current-page-id="nav.currentTab" page-id="voting" caption="'Voting tab'" tooltipster tooltip-html-->
+        <!--tooltip-theme="tooltipster-theme3" tooltip-title="<center><u>Voting Area</u></center><br/>Decentralized voting utility."></span>-->
         <span waves-tab
               on-select="nav.changeTab(pageId)"
               current-page-id="nav.currentTab"
@@ -384,7 +394,9 @@
               tooltip-html
               tooltip-theme="tooltipster-theme3"
               tooltip-title="<center><u>Tokens Creation tab</u></center><br/>Area in which assets can be created."></span>
-      <span waves-tab
+        <!--<span waves-tab on-select="nav.changeTab(pageId)" current-page-id="nav.currentTab" page-id="messages" caption="'Messages tab'" tooltipster tooltip-html-->
+        <!--tooltip-theme="tooltipster-theme3" tooltip-title="<center><u>Decentralized Messenger</u></center><br/>Allows private communication between Waves users."></span>-->
+        <span waves-tab
               on-select="nav.changeTab(pageId)"
               current-page-id="nav.currentTab"
               page-id="community"
@@ -392,7 +404,7 @@
               tooltipster
               tooltip-html
               tooltip-theme="tooltipster-theme3"
-              tooltip-title="<center><u>Community tab</u></center><br/>Resources to learn more about Waves project such as <br/>forums, blogs, websites, etc."></span>
+              tooltip-title="<center><u>Community tab</u></center><br/>Resources to learn more about TurtleNetwork project such as <br/>forums, blogs, websites, etc."></span>
       </div>
     </section>
 
@@ -409,7 +421,7 @@
                 <table>
                   <div class="balanceAmt">
                     <div ng-if="!send.feeAndTransferAssetsAreTheSame"><p>Asset balance: </p><span class="balancewaves">{{send.assetBalance | moneyLong:true}}</span><br/></div>
-                    <p>Waves balance: </p><span class="balancewaves">{{send.feeAssetBalance | moneyLong:true}}</span>
+                    <p>TurtleNode balance: </p><span class="balancewaves">{{send.feeAssetBalance | moneyLong:true}}</span>
                   </div>
                   <thead>
                   <tr>
@@ -470,308 +482,12 @@
             </div>
           </div>
 
-          <div class="noDisp" ng-controller="walletWithdrawController as withdraw" data-type="crypto">
-            <div id="withdraw-crypto-dialog" waves-dialog ok-button-caption="WITHDRAW" on-dialog-ok="withdraw.confirmWithdraw(withdraw.assetForm)">
-              <h2 class="sectionHeader">WITHDRAW: {{withdraw.sourceCurrency}}</h2>
-              <p class="dialog-text">The minimum withdrawal amount is <span class="fontBold">{{withdraw.minimumPayment | moneyLong:true}}</span></p>
-              <p class="dialog-text" ng-if="withdraw.isEthereum">Do not withdraw ETH to smart contract addresses!<br/>Your transaction may fail if their execution require additional fees.</p>
-              <form id="withdraw-asset-form" name="withdraw.assetForm" novalidate ng-validate="withdraw.validationOptions">
-                <table class="form-table">
-                  <div class="balanceAmt">
-                    <div><p>Asset balance: </p><span class="balancewaves">{{withdraw.assetBalance | moneyLong:true}}</span><br/></div>
-                  </div>
-                  <tbody>
-                  <tr>
-                    <td width="30%">{{withdraw.sourceCurrency}} address</td>
-                    <td><input class="wInput form-control" name="withdrawAddress" type="text" placeholder="{{withdraw.sourceCurrency}} address" ng-model="withdraw.recipient"/></td>
-                  </tr>
-                  <tr>
-                    <td>Amount</td>
-                    <td><input class="wInput form-control" name="withdrawAmount" type="text" placeholder="Withdraw amount" ng-model="withdraw.amount" ng-change="withdraw.refreshTotal()" decimal-input-restrictor/></td>
-                  </tr>
-                  <tr>
-                    <td>Gateway fee</td>
-                    <td><input disabled class="wInput form-control" name="gatewayFee" type="text" placeholder="Gateway fee" ng-model="withdraw.feeOut" decimal-input-restrictor/></td>
-                  </tr>
-                  <tr>
-                    <td>Total</td>
-                    <td><input class="wInput form-control" name="withdrawTotal" type="text" placeholder="Total amount" ng-model="withdraw.total" ng-change="withdraw.refreshAmount()" decimal-input-restrictor/></td>
-                  </tr>
-                  <tr>
-                    <td class="padded">Waves fee</td>
-                    <td class="padded">
-                      <md-autocomplete md-input-name="withdrawFee" md-selected-item="withdraw.autocomplete.selectedFee" md-search-text="withdraw.autocomplete.searchText"
-                                       md-items="item in withdraw.autocomplete.querySearch(withdraw.autocomplete.searchText)"
-                                       md-item-text="item.amount.toString()" md-min-length="0" md-require-match="" md-no-cache="true"
-                                       md-menu-class="popup-autocomplete" class="fee-autocomplete">
-                        <md-item-template>
-                          <span md-highlight-text="withdraw.autocomplete.searchText">{{item.displayText}}</span>
-                        </md-item-template>
-                      </md-autocomplete>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </form>
-            </div>
-            <div id="withdraw-confirmation" waves-dialog ok-button-caption="CONFIRM" ok-button-enabled="!withdraw.broadcast.pending" on-dialog-ok="withdraw.broadcastTransaction()">
-              <div class="dialog-confirmation">
-                <p class="dialog-text">You are sending <span class="confirmation-value">{{withdraw.confirm.amount | moneyLong:true}}</span> with
-                  <span class="confirmation-value">{{withdraw.confirm.fee | moneyLong:true}}</span> fee to the Waves gateway address <br/>
-                  <span class="confirmation-value">{{withdraw.confirm.gatewayAddress}}</span>.
-                </p>
-                <p class="dialog-text">The gateway will transfer these funds to your {{withdraw.sourceCurrency}} address: <span class="confirmation-value">{{withdraw.confirm.recipient}}</span>.</p>
-                <p class="dialog-text">Press <span class="fontBold"> CONFIRM </span>to execute or <span class="fontBold"> CANCEL </span> to discard this operation.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="noDisp" ng-controller="walletWithdrawController as withdraw" data-type="fiat">
-            <div id="withdraw-fiat-dialog" waves-dialog ok-button-caption="CLOSE" cancel-button-visible="false">
-              <h2 class="sectionHeader">WITHDRAW: {{withdraw.sourceCurrency}}</h2>
-              <p class="dialog-text textCenter">
-                If you've been verified and deposited {{withdraw.sourceCurrency}}<br/>
-                you can withdraw {{withdraw.sourceCurrency}} back to your bank account<br/>
-                <br/>
-                To do so please make a SEND transaction to the<br/>
-                Waves address <span class="email"
-                                    title="Copy this address to the clipboard"
-                                    tooltipster
-                                    tooltip-theme="tooltipster-theme1"
-                                    ngclipboard
-                                    data-clipboard-text="3P7qtv5Z7AMhwyvf5sM6nLuWWypyjVKb7Us"
-                                    ngclipboard-success="clipboardOk()">3P7qtv5Z7AMhwyvf5sM6nLuWWypyjVKb7Us</span><br/>
-                <br/>
-                Fees are 1% from the amount transferred<br/>
-                <br/>
-                The minimum amount is 500 {{withdraw.sourceCurrency}}<br/>
-                <br/>
-                <a href="https://coinomat.com/faq.php" target="_blank">More information about withdrawals</a>
-              </p>
-              <br/>
-              <p class="dialog-text textCenter">
-                If you have any questions,<br/>
-                please just send an email to<br/>
-                <span class="email"
-                      title="Copy this address to the clipboard"
-                      tooltipster
-                      tooltip-theme="tooltipster-theme1"
-                      ngclipboard
-                      data-clipboard-text="{{withdraw.gatewayEmail}}"
-                      ngclipboard-success="clipboardOk()">{{withdraw.gatewayEmail}}</span>
-              </p>
-            </div>
-          </div>
-
           <div class="noDisp" ng-controller="walletDepositController as deposit" data-currency="BTC">
             <div id="deposit-btc-dialog" waves-dialog ok-button-caption="CLOSE" cancel-button-visible="false">
               <h2 class="sectionHeader">DEPOSIT: BTC</h2>
-              <p class="dialog-text textCenter">
-                <img src="img/visa_mastercard_116x35.gif" width="116" height="35"><span class="divider-2"></span>
-                <button class="wButton wButton-dialog" ng-click="walletList.depositFromCard(deposit.assetBalance.currency)">
-                  Buy BTC from your credit card
-                </button>
-              </p>
-              <p class="dialog-text">To deposit BTC to your Waves account, please send BTC to the address below.<br/>
-                The minimum amount of deposit is <span class="fontBold">{{::deposit.btc.minimumAmount}} BTC</span>.</p>
-              <table class="wavesTable bitcoin-requisites">
-                <tbody>
-                <tr>
-                  <td><b>{{deposit.btc.bitcoinAddress}}</b></td>
-                </tr>
-                </tbody>
-              </table>
-              <p class="dialog-text">Enter this address into your Bitcoin client or wallet. Once the transaction is confirmed, <br/>
-                the gateway will process the transfer of BTC to a token in your Waves account.</p>
-              <p class="dialog-text">Please note that the gateway doesn't apply any fees for this operation.</p>
-              <p class="dialog-text">You can scan this QR-code in order to copy the address.<br/>
-                Amount is optional but it will be added to the QR-code if present.</p>
-              <div class="textCenter">
-                <input class="wInput small" type="text" placeholder="Amount" ng-model="deposit.btc.bitcoinAmount" ng-change="deposit.refreshBTCUri()" decimal-input-restrictor />
-                <br/>
-                <br/>
-                <a ng-href="{{deposit.btc.bitcoinUri}}">
-                  <waves-qr-code class="center" size="180" value="deposit.btc.bitcoinUri"></waves-qr-code>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="noDisp" ng-controller="walletDepositController as deposit" data-currency="ETH">
-            <div id="deposit-eth-dialog" waves-dialog ok-button-caption="CLOSE" cancel-button-visible="false">
-              <h2 class="sectionHeader">DEPOSIT: ETH</h2>
-              <div class="plate-warning">
-                <p><b>Do not deposit ETH from smart contracts!</b></p>
-                <p>Check if your wallet or exchange uses smart-contracts to withdraw ETH.<br/>
-                   We do not accept such transactions and can’t refund them.<br/>
-                   You will lose that money.</p>
-              </div>
-              <p class="dialog-text">To deposit ETH to your Waves account, please send ETH to the address below.<br/>
-                The minimum amount of deposit is <span class="fontBold">{{deposit.eth.minimumAmount}} ETH</span>.</p>
-              <p class="dialog-text">Please do not deposit ERC20 tokens! Only Ethereum is allowed.</p>
-              <table class="wavesTable bitcoin-requisites">
-                <tbody>
-                <tr>
-                  <td><b>{{deposit.eth.ethereumAddress}}</b></td>
-                </tr>
-                </tbody>
-              </table>
-              <p class="dialog-text">Enter this address into your Ethereum client or wallet. Once the transaction is confirmed, <br/>
-                the gateway will process the transfer of ETH to a token in your Waves account.</p>
-              <p class="dialog-text">Please note that the gateway doesn't apply any fees for this operation.</p>
-              <div class="textCenter">
-                <waves-qr-code class="center" size="180" value="deposit.eth.ethereumAddress"></waves-qr-code>
-              </div>
-            </div>
-          </div>
-
-          <div class="noDisp">
-            <div id="digilira-dialog" waves-dialog ok-button-caption="CLOSE" cancel-button-visible="false">
-              <h2 class="sectionHeader">TURKISH LIRA</h2>
-              <p class="dialog-text">Please visit <a href="https://www.digilira.com/" target="_blank">Digilira</a> gateway.</p>
-              <p class="dialog-text">You can only use Turkish Lira gateway if you have Turkish citizenship.</p>
-            </div>
-          </div>
-
-          <div class="noDisp">
-            <div id="mir-dialog" waves-dialog ok-button-caption="CLOSE" cancel-button-visible="false">
-              <h2 class="sectionHeader">МИР</h2>
-              <p class="dialog-text">Please visit <a href="https://mir.one" target="_blank">Mir</a> gateway.</p>
-              <p class="dialog-text">You can only use Mir gateway if you have Russia citizenship.</p>
-            </div>
-          </div>
-
-          <div class="noDisp" ng-controller="walletDepositController as deposit" data-currency="LTC">
-            <div id="deposit-ltc-dialog" waves-dialog ok-button-caption="CLOSE" cancel-button-visible="false">
-              <h2 class="sectionHeader">DEPOSIT: LTC</h2>
-              <p class="dialog-text">To deposit LTC to your Waves account, please send LTC to the address below.<br/>
-                The minimum amount of deposit is <span class="fontBold">{{deposit.ltc.minimumAmount}} LTC</span>.</p>
-              <table class="wavesTable bitcoin-requisites">
-                <tbody>
-                <tr>
-                  <td><b>{{deposit.ltc.litecoinAddress}}</b></td>
-                </tr>
-                </tbody>
-              </table>
-              <p class="dialog-text">Enter this address into your Litecoin client or wallet. Once the transaction is confirmed, <br/>
-                the gateway will process the transfer of LTC to a token in your Waves account.</p>
-              <p class="dialog-text">Please note that the gateway doesn't apply any fees for this operation.</p>
-              <div class="textCenter">
-                <waves-qr-code class="center" size="180" value="deposit.ltc.litecoinAddress"></waves-qr-code>
-              </div>
-            </div>
-          </div>
-
-          <div class="noDisp" ng-controller="walletDepositController as deposit" data-currency="ZEC">
-            <div id="deposit-zec-dialog" waves-dialog ok-button-caption="CLOSE" cancel-button-visible="false">
-              <h2 class="sectionHeader">DEPOSIT: ZEC</h2>
-              <p class="dialog-text">To deposit Zcash to your Waves account, please send Zcash to the address below.<br/>
-                The minimum amount of deposit is <span class="fontBold">{{deposit.zec.minimumAmount}} ZEC</span>.</p>
-              <table class="wavesTable bitcoin-requisites">
-                <tbody>
-                <tr>
-                  <td><b>{{deposit.zec.zcashAddress}}</b></td>
-                </tr>
-                </tbody>
-              </table>
-              <p class="dialog-text">Enter this address into your Zcash client or wallet. Once the transaction is confirmed, <br/>
-                the gateway will process the transfer of Zcash to a token in your Waves account.</p>
-              <p class="dialog-text">Please note that the gateway doesn't apply any fees for this operation.</p>
-              <div class="textCenter">
-                <waves-qr-code class="center" size="180" value="deposit.zec.zcashAddress"></waves-qr-code>
-              </div>
-            </div>
-          </div>
-
-          <div class="noDisp" ng-controller="walletDepositController as deposit" data-currency="BCH">
-            <div id="deposit-bch-dialog" waves-dialog ok-button-caption="CLOSE" cancel-button-visible="false">
-              <h2 class="sectionHeader">DEPOSIT: BCH</h2>
-              <p class="dialog-text">To deposit BCH to your Waves account, please send BCH to the address below.<br/>
-                The minimum amount of deposit is <span class="fontBold">{{deposit.zec.minimumAmount}} BCH</span>.</p>
-              <table class="wavesTable bitcoin-requisites">
-                <tbody>
-                <tr>
-                  <td><b>{{deposit.bch.cashAddress}}</b></td>
-                </tr>
-                </tbody>
-              </table>
-              <p class="dialog-text">Enter this address into your BCH client or wallet. Once the transaction is confirmed, <br/>
-                the gateway will process the transfer of BCH to a token in your Waves account.</p>
-              <p class="dialog-text">Please note that the gateway doesn't apply any fees for this operation.</p>
-              <div class="textCenter">
-                <waves-qr-code class="center" size="180" value="deposit.bch.cashAddress"></waves-qr-code>
-              </div>
-            </div>
-          </div>
-
-          <div class="noDisp" ng-controller="walletDepositController as deposit" data-currency="EUR">
-            <div id="deposit-eur-dialog" waves-dialog ok-button-caption="CLOSE" cancel-button-visible="false">
-              <h2 class="sectionHeader">DEPOSIT: EUR</h2>
-              <p class="dialog-text textCenter">VERIFICATION</p>
-              <p class="dialog-text textCenter">
-                In order to deposit Euros directly from your bank<br/>
-                account through SEPA transfer you MUST get verified<br/>
-                by our partner <a href="https://www.idnow.eu/" target="_blank">IDNow.eu</a>
-              </p>
-              <p class="dialog-text textCenter">
-                <a href="https://wavesplatform.userecho.com/topics/1303-buying-eurotoken-with-sepa-transfer/" target="_blank">Read more about SEPA transfers</a>
-              </p>
-              <p class="dialog-text textCenter">
-                <a href="https://wavesplatform.userecho.com/topics/1304-list-of-accepted-countries-and-documents-for-verification/" target="_blank">List of eligible countries and IDs</a>
-              </p>
-              <p class="dialog-text textCenter">
-                In order to get verified follow the link:<br/>
-                <a href="{{deposit.fiat.verificationLink}}" target="_blank">{{deposit.fiat.verificationLink}}</a>
-              </p>
-              <p class="dialog-text textCenter">We don't accept international wire transfers from US Citizens or from USA Banks</p>
-              <br/>
-              <p class="dialog-text textCenter">
-                In case the link doesn't work for you,<br/>
-                please just send an email to<br/>
-                <span class="email"
-                      title="Copy this address to the clipboard"
-                      tooltipster
-                      tooltip-theme="tooltipster-theme1"
-                      ngclipboard
-                      data-clipboard-text="{{deposit.fiat.email}}"
-                      ngclipboard-success="clipboardOk()">{{deposit.fiat.email}}</span>
-                <br/>
-                with your Waves wallet address as the subject
-              </p>
-            </div>
-          </div>
-
-          <div class="noDisp" ng-controller="walletDepositController as deposit" data-currency="USD">
-            <div id="deposit-usd-dialog" waves-dialog ok-button-caption="CLOSE" cancel-button-visible="false">
-              <h2 class="sectionHeader">DEPOSIT: USD</h2>
-              <p class="dialog-text textCenter">VERIFICATION</p>
-              <p class="dialog-text textCenter">
-                In order to deposit USD directly from your bank<br/>
-                account through wire transfer you MUST get verified<br/>
-                by our partner <a href="https://www.idnow.eu/" target="_blank">IDNow.eu</a>
-              </p>
-              <p class="dialog-text textCenter">
-                <a href="https://wavesplatform.userecho.com/topics/1304-list-of-accepted-countries-and-documents-for-verification/" target="_blank">List of eligible countries and IDs</a>
-              </p>
-              <p class="dialog-text textCenter">
-                In order to get verified follow the link:<br/>
-                <a href="{{deposit.fiat.verificationLink}}" target="_blank">{{deposit.fiat.verificationLink}}</a>
-              </p>
-              <p class="dialog-text textCenter">We don't accept international wire transfers from US Citizens or from USA Banks</p>
-              <br/>
-              <p class="dialog-text textCenter">
-                In case the link doesn't work for you,<br/>
-                please just send an email to<br/>
-                <span class="email"
-                      title="Copy this address to the clipboard"
-                      tooltipster
-                      tooltip-theme="tooltipster-theme1"
-                      ngclipboard
-                      data-clipboard-text="{{deposit.fiat.email}}"
-                      ngclipboard-success="clipboardOk()">{{deposit.fiat.email}}</span>
-                <br/>
-                with your Waves wallet address as the subject
-              </p>
+              <p class="dialog-text">To deposit BTC to your TN account, please visit the webpage below.<br/>
+                <a ng-href="https://bitcoingw.blackturtle.eu" target="_blank">Bitcoin gateway</a>
+                The minimum amount of deposit is everything above the fees. The fees equal 0.0006 <span class="fontBold"> BTC</span>.</p>
             </div>
           </div>
 
@@ -840,7 +556,7 @@
               <tr ng-show="assetList.noData">
                 <td colspan="5">You do not own/have not created any assets.</td>
               </tr>
-              <tr ng-show="!assetList.noData" ng-repeat="tx in assetList.assets | antiSpam:'id' | asset track by tx.id">
+              <tr ng-show="!assetList.noData" ng-repeat="tx in assetList.assets | asset track by tx.id">
                 <td>
                   <span>{{tx.name}}</span>
                 </td>
@@ -909,7 +625,7 @@
                   <h2 class="sectionHeader">ASSET TRANSFER</h2>
                   <div class="balanceAmt">
                     <p>Asset balance: </p><span class="balancewaves">{{transfer.availableBalance | moneyLong:true}}</span><br/>
-                    <p>Waves balance: </p><span class="balancewaves">{{transfer.feeAssetBalance | moneyLong:true}}</span>
+                    <p>TN balance: </p><span class="balancewaves">{{transfer.feeAssetBalance | moneyLong:true}}</span>
                   </div>
                   <table class="wavesTable">
                     <thead>
@@ -974,7 +690,7 @@
                   <h2 class="sectionHeader">ASSET REISSUE</h2>
                   <div class="balanceAmt">
                     <p>Total tokens issued: </p><span class="balancewaves">{{reissue.totalTokens.formatAmount()}}</span><br/>
-                    <p>Waves balance: </p><span class="balancewaves">{{reissue.wavesBalance.formatAmount(true)}}</span>
+                    <p>TN balance: </p><span class="balancewaves">{{reissue.wavesBalance.formatAmount(true)}}</span>
                   </div>
                   <table class="wavesTable">
                     <thead>
@@ -1130,7 +846,7 @@
           <div class="phContent">
             <h1>DECENTRALIZED VOTING</h1>
             <br/>
-            <p>With a fair and automated system, Waves' voting area enables communities and projects to achieve consensus for critical decision-making that might otherwise prove difficult or controversial. A full set of analytic tools will also be available to follow up the voting process in real time.
+            <p>With a fair and automated system, TN' voting area enables communities and projects to achieve consensus for critical decision-making that might otherwise prove difficult or controversial. A full set of analytic tools will also be available to follow up the voting process in real time.
               <br/><br/>
               The Decentralized Voting feature launch is estimated for the first quarter of 2017.
             </p>
@@ -1153,9 +869,10 @@
 
           <div ng-controller="tokenCreateController as ctrl">
             <h2 class="sectionHeader">TOKEN CREATION</h2>
+            <span ng-if="createAssetForm.assetName.$error.pattern">Invalid Pattern For Asset. Don't use . / :</span>
             <form id="create-asset-form" name="createAssetForm" novalidate ng-validate="ctrl.issuanceValidationOptions" ng-submit="ctrl.assetIssueConfirmation(createAssetForm, $event)">
               <div class="balanceAmt">
-                <p>Waves balance: </p><span class="balancewaves">{{ctrl.wavesBalance | moneyLong:true}}</span>
+                <p>TN balance: </p><span class="balancewaves">{{ctrl.wavesBalance | moneyLong:true}}</span>
               </div>
               <table class="wavesTable">
                 <thead>
@@ -1167,7 +884,7 @@
                 <tbody>
                 <tr>
                   <td><label for="assetName">Name</label></td>
-                  <td><input id="assetName" name="assetName" type="text" class="wInput form-control" focus-me="true" ng-model="ctrl.asset.name" tooltipster tooltip-theme="tooltipster-theme1" tooltip-html title="This field defines the NAME of your<br/>asset.<br/><br/>It can contain up to 16 alphanumeric<br/>characters."/></td>
+                  <td><input id="assetName" name="assetName" type="text" class="wInput form-control" focus-me="true" ng-model="ctrl.asset.name" ng-pattern="ctrl.regex" tooltipster tooltip-theme="tooltipster-theme1" tooltip-html title="This field defines the NAME of your<br/>asset.<br/><br/>It can contain up to 16 alphanumeric<br/>characters."/></td>
                 </tr><br/>
                 <tr>
                   <td><label for="assetDescription">Description</label></td>
@@ -1248,7 +965,8 @@
         <!-- COMMUNITY TAB -->
         <div id="mBB-community" class="mBB-content" ng-switch-when="community" ng-controller="communityController as community">
           <!-- Temporary -->
-          <p>DISCLAIMER: The Community tab will temporarily hold block information for testing purposes. After alpha phase this data  will be relocated inside the Preferences - Advanced area.</p>
+          <p>DISCLAIMER: This tab represents the block from Turtle Network blockchain.</p>
+          <p>Click<a href="https://explorer.blackturtle.eu/" target="_blank"> here </a>to visit the block explorer</p>
           <h2 class="sectionHeader">LATEST BLOCKS INFORMATION</h2>
           <p class="centerIt">
           <div id="latestBlocks" class="wavesTable wScroll" >
